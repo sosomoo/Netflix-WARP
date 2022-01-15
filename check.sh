@@ -14,35 +14,35 @@ warp-cli --accept-tos register >/dev/null 2>&1 && sleep 2
 }
 WGCFV4(){
 while true; do
-[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep 30 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep 30)
+[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep $stop || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep $goon)
 done
 }
 WGCFV6(){
 while true; do
-[[ "$result6" == "200" ]] && green "目前wgcf-ipv6的IP支持奈飞，停止刷新" && sleep 30 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv6的IP不支持奈飞，刷新wgcf-ipv6的IP中……" && sleep 30)
+[[ "$result6" == "200" ]] && green "目前wgcf-ipv6的IP支持奈飞，停止刷新" && sleep $stop || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv6的IP不支持奈飞，刷新wgcf-ipv6的IP中……" && sleep $goon)
 done
 }
 SOCKS5warp(){
 while true; do
-[[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep 30 || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep 30)
+[[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep $stop || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep $goon)
 done
 }
 SOCKS5wgcf4(){
 while true; do
-[[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep 30 || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep 30)
-[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep 30 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep 30)
+[[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep $stop || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep $goon)
+[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep $stop || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep $goon)
 done
 }
 SOCKS5wgcf6(){
 while true; do
-[[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep 30 || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep 30)
-[[ "$result6" == "200" ]] && green "目前wgcf-ipv6的IP支持奈飞，停止刷新" && sleep 30 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv6的IP不支持奈飞，刷新wgcf-ipv6的IP中……" && sleep 30)
+[[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep $stop || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep $goon)
+[[ "$result6" == "200" ]] && green "目前wgcf-ipv6的IP支持奈飞，停止刷新" && sleep $stop || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv6的IP不支持奈飞，刷新wgcf-ipv6的IP中……" && sleep $goon)
 done
 }
 WGCFV4V6(){
 while true; do
-[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep 30 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep 30)
-[[ "$result6" == "200" ]] && green "目前wgcf-ipv6的IP支持奈飞，停止刷新" && sleep 30 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv6的IP不支持奈飞，刷新wgcf-ipv6的IP中……" && sleep 30)
+[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep $stop || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep $goon)
+[[ "$result6" == "200" ]] && green "目前wgcf-ipv6的IP支持奈飞，停止刷新" && sleep $stop || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv6的IP不支持奈飞，刷新wgcf-ipv6的IP中……" && sleep $goon)
 done
 }
 [[ $(systemctl is-active warp-svc) = active && $wgcfv6 =~ on|plus ]] && green "双栈WARP循环执行：刷socks5与wgcf-ipv6的IP" && SOCKS5wgcf6
