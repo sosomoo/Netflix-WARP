@@ -30,7 +30,7 @@ done
 SOCKS5wgcf4(){
 while true; do
 [[ "$result" == "200" ]] && green "目前socks5的IP支持奈飞，停止刷新" && sleep 45 || (s5c && yellow "目前socks5的IP不支持奈飞，刷新socks5的IP中……" && sleep 30)
-[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep 45|| (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep 30)
+[[ "$result4" == "200" ]] && green "目前wgcf-ipv4的IP支持奈飞，停止刷新" && sleep 45 || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP不支持奈飞，刷新wgcf-ipv4的IP中……" && sleep 30)
 done
 }
 SOCKS5wgcf6(){
