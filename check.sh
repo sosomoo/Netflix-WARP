@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-screen -S aw -X quit
-screen -dmS aw
-screen -x -S aw -p 0 -X stuff "/bin/bash /root/check.sh"
-screen -x -S aw -p 0 -X stuff $'\n'
 green(){ echo -e "\033[32m\033[01m$1\033[0m";}
 yellow(){ echo -e "\033[33m\033[01m$1\033[0m";}
 wgcfv4=$(curl -s4m6 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2) 
