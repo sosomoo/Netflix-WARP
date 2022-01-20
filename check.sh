@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+sleep 10
 green(){ echo -e "\033[32m\033[01m$1\033[0m";}
 yellow(){ echo -e "\033[33m\033[01m$1\033[0m";}
 wgcfv4=$(curl -s4m10 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2) 
