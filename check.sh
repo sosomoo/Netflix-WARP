@@ -56,8 +56,8 @@ done
 SOCKS5wgcf4(){
 while true; do
 info
-[[ "$result" == "200" && "$region" = "SG" ]] && green "目前socks5的IP($v4)支持奈飞，地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，停止刷新" && sleep 8s || (s5c && yellow "目前socks5的IP($v4) $NF，WARP默认地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，刷新socks5的IP中……" && sleep 5s)
-[[ "$result4" == "200" && "$region" = "SG" ]] && green "目前wgcf-ipv4的IP($v4)支持奈飞，地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，停止刷新" && sleep 8s || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP($v4) $NF，WARP默认地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，刷新wgcf-ipv4的IP中……" && sleep 5s)
+[[ "$result" == "200" && "$region" = "dd" ]] && green "目前socks5的IP($v4)支持奈飞，地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，停止刷新" && sleep 8s || (s5c && yellow "目前socks5的IP($v4) $NF，WARP默认地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，刷新socks5的IP中……" && sleep 5s)
+[[ "$result4" == "200" && "$region" = "dd" ]] && green "目前wgcf-ipv4的IP($v4)支持奈飞，地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，停止刷新" && sleep 8s || (systemctl restart wg-quick@wgcf && yellow "目前wgcf-ipv4的IP($v4) $NF，WARP默认地区为$(eval echo \$$region) ，设置的地区为$(eval echo \$dd) ，刷新wgcf-ipv4的IP中……" && sleep 5s)
 done
 }
 SOCKS5wgcf6(){
