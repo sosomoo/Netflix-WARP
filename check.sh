@@ -34,7 +34,7 @@ s5c(){
 warp-cli --accept-tos register >/dev/null 2>&1 && sleep 2
 [[ -e /etc/wireguard/ID ]] && warp-cli --accept-tos set-license $(cat /etc/wireguard/ID) >/dev/null 2>&1
 }
-
+info
 WGCFV4(){
 while true; do
 info
