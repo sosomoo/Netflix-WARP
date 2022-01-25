@@ -2,7 +2,7 @@
 
 为更好的实现本项目的灵活性与兼容性，请配合使用 https://github.com/kkkyg/CFwarp 
 
-支持WGCF的WARP与SOCKS5的WARP前后台自动刷奈飞NF的可用IP
+支持WGCF的WARP、SOCKS5的WARP前后台自动刷奈飞NF的可用IP
 
 已实现：
 
