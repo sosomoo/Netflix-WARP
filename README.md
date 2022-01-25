@@ -1,4 +1,4 @@
-本项目已集成在https://github.com/kkkyg/CFwarp 主脚本上，是VPS添加WARP脚本的一个集成功能！
+本项目已集成在https://github.com/kkkyg/CFwarp 主脚本上，是VPS添加WARP脚本的一个集成功能，已设置成在screen后台一键执行！
 
 为更好的实现本项目的灵活性与兼容性，请配合使用 https://github.com/kkkyg/CFwarp 
 
