@@ -37,7 +37,9 @@ region=`tr [:lower:] [:upper:] <<< $(curl --user-agent "${UA_Browser}" -fs --max
 
 s5c(){
 warp-cli --accept-tos register >/dev/null 2>&1 && sleep 2
-[[ -e /etc/wireguard/ID ]] && warp-cli --accept-tos set-license $(cat /etc/wireguard/ID) >/dev/null 2>&1
+if [[ -e /etc/wireguard/ID ]]; then
+warp-cli --accept-tos set-license $(cat /etc/wireguard/ID) >/dev/null 2>&1
+fi
 }
 info
 WGCFV4(){
